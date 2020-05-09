@@ -6,7 +6,8 @@ from subprocess import call, PIPE, STDOUT
 def get_return_code_of_simple_cmd(cmd, stderr=STDOUT):
   """Execute a simple external command and return its exit status."""
   args = shlex.split(cmd)
-  return call(args, stdout=PIPE, stderr=stderr)
+  #return call(args, stdout=PIPE, stderr=stderr)
+  return call(args, stderr=stderr)
 
 def is_network_alive():
   cmd = "ping -c 1 1.1.1.1"

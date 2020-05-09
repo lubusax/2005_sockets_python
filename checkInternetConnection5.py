@@ -4,7 +4,7 @@ import shlex
 from subprocess import call, PIPE, STDOUT, Popen
 
 def getReturnCode(cmd, stderr=STDOUT, timeout=1):
-  """Execute a simple external command and return its exit status."""
+  """Execute a simple shell command and return its exit status."""
   args = shlex.split(cmd)
   childProcess = Popen(args,stdout=PIPE,stderr=stderr)
   try:
