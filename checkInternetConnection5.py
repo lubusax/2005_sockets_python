@@ -14,13 +14,13 @@ def getReturnCode(cmd, stderr=STDOUT, timeout=1):
     returnCode = -99 # timeout or other error
   return returnCode
 
-def isNetworkAlive():
+def internetAccess():
   cmd = "ping -c 1 1.1.1.1"
   return getReturnCode(cmd) == 0
 
 duration = time.process_time()
 
-result = isNetworkAlive()
+result = internetAccess()
 
 duration = time.process_time() - duration
 
